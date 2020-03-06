@@ -11,9 +11,10 @@
 }
 
 .card.small_card{
-  width: 13em;
+  width: 18em;
   height: 16em;
   text-align: center;
+  margin: 1em 2em 1em 0;
 }
 
 .gap_up{
@@ -22,5 +23,10 @@
 
 .gapper{
   margin: 1.5em 0;
+}
+
+.flexer{
+  display: flex;
+  flex-wrap: wrap;
 }
 /* You can add global styles to this file, and also import other style files */
