@@ -27,7 +27,7 @@ interface Game {
 
 export class InfoComponent implements OnInit {
 
-  game: Game;
+  game: any;
 
   url: string;
 
