@@ -1,0 +1,22 @@
+
+<div class="container">
+  <h1 class="gap_up">Compras (solo Administrador)</h1>
+
+  <div *ngFor="let purchase of purchases">
+  <div class="row table border-bottom gap_up">
+    <div class="col-md-4 border-right">
+      {{purchase.name}}
+    </div>
+
+    <div class="col-md-4 border-right">
+      {{purchase.email}}
+    </div>
+
+    <div class="col-md-4">
+      {{purchase.game}}
+    </div>
+
+  </div>
+
+  </div>
+</div>

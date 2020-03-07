@@ -15,12 +15,14 @@ import {FormsModule} from '@angular/forms';
 import {AngularFireModule} from '@angular/fire';
 import {environment} from '../environments/environment';
 import {AngularFirestore} from '@angular/fire/firestore';
+import { AdminComponent } from './admin/admin.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    InfoComponent
+    InfoComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,

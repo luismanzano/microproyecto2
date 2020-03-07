@@ -48,4 +48,8 @@ export class UserService {
 
     return this.firestore.collection('purchases').add(data);
   }
+
+  getPurchases() {
+      return this.firestore.collection('purchases').snapshotChanges();
+  }
 }
