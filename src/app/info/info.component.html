@@ -2,27 +2,67 @@
 <div class="container">
   <div class="row">
     <h1 class="gapper gap_up">
-      TITULO DEL JUEGO
+      {{game.name}}
     </h1>
   </div>
   <div class="row">
 
-    <div class="col-md-5">
-      <img src="" alt="una imagen">
+    <div class="col-md-7">
+      <img [src]="game.image" class="poster_image" alt="una imagen">
     </div>
 
-    <div class="col-md-4">
+    <div class="col-md-5">
       <h6><b>Desarrolladores / Publicadores</b></h6>
-      <h6><b>Rating del Juego</b></h6>
-      <h6><b>Plataformas</b></h6>
-      <h6><b>Premios</b></h6>
       <div class="row">
+        <div class="col-md-10">
+          <div *ngFor="let devs of game.developers">
+            <h6>{{devs.name}}</h6>
+          </div>
+        </div>
+      </div>
+
+
+
+      <h6 class="gap_up"><b>Rating del Juego: </b> {{game.rating}}</h6>
+
+
+
+      <h6 class="gap_up"><b>Plataformas </b></h6>
+      <div class="row">
+        <div class="col-md-10">
+      <div *ngFor="let plat of game.platforms">
+        <h6>{{plat.platform.name}}</h6>
+      </div>
+        </div>
+      </div>
+
+      <h6 class="gap_up"><b>Fecha de Lanzamiento </b> {{game.released}}</h6>
+
+      <h6 class="gap_up"><b>Generos</b></h6>
+
+      <div class="row">
+        <div class="col-md-10">
+          <div *ngFor="let genre of game.genres">
+            <h6>{{genre.name}}</h6>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="row" id="compra">
+
         <div class="col-md-6">
-          <input type="text" placeholder="Ingresa tu nombre">
+          <input type="text" class="form-control" placeholder="Ingresa tu nombre">
         </div>
 
         <div class="col-md-6">
-          <input type="text" placeholder="Ingresa tu nombre">
+          <input type="email" class="form-control" placeholder="Ingresa tu correo">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-12">
+          <button class="btn btn-success"> Compra el Juego!</button>
         </div>
       </div>
     </div>
@@ -31,15 +71,36 @@
 
   <div class="row">
     <div class="col-md-5">
-      <h6>Descripcion</h6>
+      <h5><b>Descripcion</b></h5>
     </div>
 
     <div class="col-md-8">
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque dignissimos eos minus necessitatibus nostrum? Consequuntur dolor magnam omnis quia ratione sint unde. Debitis error et eum expedita voluptas voluptate voluptatem.
+      <p>{{game.description}}</p>
+    </div>
+
+  </div>
+
+  <div class="row">
+
+    <div class="col-md-12">
+      <h5><b>Trailer del Juego</b></h5>
+      <video [src]="game.trailer" controls></video>
     </div>
   </div>
 
 
+  <div class="row">
 
+    <div class="col-md-12">
+      <h5><b>Screenshots</b></h5>
+
+      <div class="row">
+        <div *ngFor="let shot of game.screenshots" class="flexer">
+          <img class="shot" [src]=shot.store.image_background>
+          </div>
+        </div>
+    </div>
+  </div>
 
 </div>
+

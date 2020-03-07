@@ -25,8 +25,8 @@ export class UserService {
     console.log('searchy en el servicio ' + this.search);
   }
 
-  getGame() {
-    return this.http.get('https://rawg.io/api/games/' + this.gameFetch);
-    console.log('El slug del juego que queremos buscar ' + this.gameFetch);
+  getGame(url: string) {
+    return this.http.get('https://rawg.io/api/games/' + url);
+    console.log('El slug del juego que queremos buscar ' + url);
   }
 }
