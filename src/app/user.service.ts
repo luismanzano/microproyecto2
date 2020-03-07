@@ -38,9 +38,14 @@ export class UserService {
     console.log('El slug del juego que queremos buscar ' + url);
   }
 
-  addPurchase(){
-    return this.firestore.collection('purchases').doc().set({
+  addPurchase(name: string, email: string, game: string) {
 
-    });
+    let data = {
+      name: name,
+      email: email,
+      game: game
+    };
+
+    return this.firestore.collection('purchases').add(data);
   }
 }

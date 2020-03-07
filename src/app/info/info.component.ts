@@ -31,6 +31,9 @@ export class InfoComponent implements OnInit {
 
   url: string;
 
+  clientName: string;
+  clientEmail: string;
+  //clientGame = this.game.name;
 
   constructor(
     protected userService: UserService,
@@ -67,9 +70,16 @@ export class InfoComponent implements OnInit {
     });
   }
   //
-  // addPurchase() {
-  //   this.userService.addPurchase(this.clientEmail, this.clientName, this.clientGame);
-  // }
+   addPurchase() {
+    if (this.clientName != "" && this.clientEmail != "") {
+      alert('Compra Realizada')
+      this.userService.addPurchase(this.clientEmail, this.clientName, this.game.name);
+      this.clientName = '';
+      this.clientEmail = '';
+    } else {
+      alert("Faltan campos de datos");
+    }
+  }
 
 
 }
