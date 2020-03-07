@@ -49,22 +49,32 @@
       </div>
 
 
-      <div class="row" id="compra">
+      <div *ngIf="game.tba == true; else elseBlock">
 
-        <div class="col-md-6">
-          <input type="text" class="form-control" [(ngModel)]="clientName" placeholder="Ingresa tu nombre">
-        </div>
-
-        <div class="col-md-6">
-          <input type="email" class="form-control" [(ngModel)]="clientEmail" placeholder="Ingresa tu correo">
+        <div class="row">
+          <div class="col-md-12">
+            <button class="btn btn-warning"> Este juego aun no se ha estrenado</button>
+          </div>
         </div>
       </div>
+      <ng-template #elseBlock>
+        <div class="row" id="compra">
 
-      <div class="row">
-        <div class="col-md-12">
-          <button class="btn btn-success" (click)="addPurchase()"> Compra el Juego!</button>
+          <div class="col-md-6">
+            <input type="text" class="form-control" [(ngModel)]="clientName" placeholder="Ingresa tu nombre">
+          </div>
+
+          <div class="col-md-6">
+            <input type="email" class="form-control" [(ngModel)]="clientEmail" placeholder="Ingresa tu correo">
+          </div>
         </div>
-      </div>
+
+        <div class="row">
+          <div class="col-md-12">
+            <button class="btn btn-success" (click)="addPurchase()"> Compra el Juego!</button>
+          </div>
+        </div>
+      </ng-template>
     </div>
 
   </div>

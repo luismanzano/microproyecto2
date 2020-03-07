@@ -52,6 +52,7 @@ export class InfoComponent implements OnInit {
           console.log(game);
           console.log(game.name);
           console.log(game.developers);
+          console.log(game.tba);
           this.game = {
             name: game.name,
             description: game.description_raw,

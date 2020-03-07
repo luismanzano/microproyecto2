@@ -16,6 +16,8 @@ export class UserService {
   search: string;
   gameFetch: string;
 
+  today = new Date();
+
   clientName: string;
   clientEmail: string;
   clientGame: string;
