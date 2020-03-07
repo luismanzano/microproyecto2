@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../user.service';
+import { RouterModule, Routes } from '@angular/router';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -12,7 +14,9 @@ export class HomeComponent implements OnInit {
   searchy: string;
 
   constructor(
-    protected userService: UserService
+    private router: RouterModule,
+    protected userService: UserService,
+    private routercito: Router
   ) {
   }
 
@@ -68,7 +72,15 @@ export class HomeComponent implements OnInit {
       );
     } else {
       this.ngOnInit();
+      this.userService.page = 1;
     }
+  }
+
+  goToInfo(slug: string) {
+    this.userService.gameFetch = slug;
+    console.log('El juego es ' + slug);
+    console.log('El juego es ' + this.userService.gameFetch);
+    this.routercito.navigate(['/info']);
   }
 }
 

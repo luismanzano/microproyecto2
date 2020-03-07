@@ -10,6 +10,7 @@ export class UserService {
 
   page = 1;
   search: string;
+  gameFetch: string;
 
   getUsers() {
     return this.http.get('https://rawg.io/api/games?page=' + this.page + '&page_size=20');
@@ -22,5 +23,10 @@ export class UserService {
   getSearch() {
     return this.http.get('https://rawg.io/api/games?search=' + this.search + '&page_size=20');
     console.log('searchy en el servicio ' + this.search);
+  }
+
+  getGame() {
+    return this.http.get('https://rawg.io/api/games/' + this.gameFetch);
+    console.log('El slug del juego que queremos buscar ' + this.gameFetch);
   }
 }

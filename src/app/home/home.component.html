@@ -8,7 +8,7 @@
   <div *ngFor="let game of users">
     <div class="card small_card gap_up">
       <img [src]="game.background_image" alt="Fondo del juego">
-      <h5><a href="">{{game.name}}</a></h5>
+      <h5><a [routerLink]="['/info/'+game.slug]">{{game.name}}</a></h5>
     </div>
 
   </div>

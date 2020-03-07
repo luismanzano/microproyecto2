@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {UserService} from '../user.service';
 
 @Component({
   selector: 'app-info',
@@ -7,9 +8,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InfoComponent implements OnInit {
 
-  constructor() { }
+  game: any;
 
-  ngOnInit(): void {
+  constructor(
+    protected userService: UserService
+  ) { }
+
+  ngOnInit() {
+    this.userService.getGame()
+      .subscribe(
+        (data) => {
+          // Success
+          console.log('Este es el juego que trajimos')
+          console.log('El juego de info' + data)
+          this.game = data['results'];
+          console.log(this.users);
+        },
+        (error) => {
+          console.error(error);
+        }
+      );
   }
 
 }
