@@ -47,7 +47,7 @@ export class InfoComponent implements OnInit {
       this.url = params['slug'];
 
       this.userService.getGame(params['slug'])
-        .subscribe( game => {
+        .subscribe( (game: any) => {
           console.log('el juego traido por la api');
           console.log(game);
           console.log(game.name);
