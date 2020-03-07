@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import {UserService} from '../user.service';
-import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 
@@ -31,6 +30,7 @@ export class InfoComponent implements OnInit {
   game: Game;
 
   url: string;
+
 
   constructor(
     protected userService: UserService,
@@ -66,21 +66,10 @@ export class InfoComponent implements OnInit {
         } );
     });
   }
+  //
+  // addPurchase() {
+  //   this.userService.addPurchase(this.clientEmail, this.clientName, this.clientGame);
+  // }
 
-
-    // this.userService.getGame()
-    //   .subscribe(
-    //     (data) => {
-    //       // Success
-    //       console.log('Este es el juego que trajimos')
-    //       console.log('El juego de info' + data)
-    //       this.game = data['results'];
-    //       console.log(this.users);
-    //     },
-    //     (error) => {
-    //       console.error(error);
-    //     }
-    //   );
-  //}
 
 }

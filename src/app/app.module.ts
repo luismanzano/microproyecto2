@@ -12,6 +12,10 @@ import { HomeComponent } from './home/home.component';
 import { InfoComponent } from './info/info.component';
 import {FormsModule} from '@angular/forms';
 
+import {AngularFireModule} from '@angular/fire';
+import {environment} from '../environments/environment';
+import {AngularFirestore} from '@angular/fire/firestore';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,10 +28,12 @@ import {FormsModule} from '@angular/forms';
     HttpClientModule,
     FormsModule,
     RouterModule,
-    AppRoutingModule
+    AppRoutingModule,
+    AngularFireModule.initializeApp(environment.firebase)
   ],
   providers: [
-    UserService
+    UserService,
+    AngularFirestore
   ],
   bootstrap: [AppComponent]
 })
